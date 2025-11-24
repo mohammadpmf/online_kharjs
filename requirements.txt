@@ -1,5 +1,9 @@
 asgiref==3.9.1
+crispy-bootstrap5==2025.6
 Django==5.2.5
+django-crispy-forms==2.5
+jalali_core==1.0.0
+jdatetime==5.2.0
 PyMySQL==1.1.1
 python-dotenv==1.1.1
 sqlparse==0.5.3

@@ -46,8 +46,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # third party apps:
+    "crispy_forms",
+    "crispy_bootstrap5",
     # my apps:
     "accounts",
+    "accounting",
 ]
 
 MIDDLEWARE = [
@@ -88,15 +92,15 @@ DATABASES = {"default": {}}
 DATABASES = {
     "default": {
         ###################### sqlite3 ######################
-        # "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
         ###################### mysql ######################
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ.get("MYSQL_DB_NAME"),
-        "USER": os.environ.get("MYSQL_USERNAME", "root"),
-        "PASSWORD": os.environ.get("MYSQL_PASSWORD", "root"),
-        "HOST": os.environ.get("MYSQL_HOST", "127.0.0.1"),
-        "PORT": os.environ.get("MYSQL_PORT", "3306"),
+        # "ENGINE": "django.db.backends.mysql",
+        # "NAME": os.environ.get("MYSQL_DB_NAME"),
+        # "USER": os.environ.get("MYSQL_USERNAME", "root"),
+        # "PASSWORD": os.environ.get("MYSQL_PASSWORD", "root"),
+        # "HOST": os.environ.get("MYSQL_HOST", "127.0.0.1"),
+        # "PORT": os.environ.get("MYSQL_PORT", "3306"),
     }
 }
 
@@ -127,7 +131,7 @@ LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
 
@@ -142,4 +146,9 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
+USE_THOUSAND_SEPARATOR = True
+THOUSAND_SEPARATOR = ","
+NUMBER_GROUPING = 3
